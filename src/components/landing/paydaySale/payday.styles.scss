@@ -1,0 +1,64 @@
+.payday-container {
+  background: linear-gradient(
+    360deg,
+    #e0c340 0%,
+    #dfc23e 3.93%,
+    #e1c441 7.23%,
+    #e3c743 10.23%,
+    #e4c542 13.14%,
+    #e6c744 16.22%,
+    #e7c845 19.84%,
+    #e5c643 24.38%,
+    #e6c945 31%,
+    #e3c743 37.19%,
+    #e9ca48 43.33%,
+    #edce49 50.36%,
+    #f0d44c 56.57%,
+    #f4d84f 62.71%,
+    #f6da52 67.12%,
+    #f7db53 73.77%,
+    #f9dd55 79.08%,
+    #f9df56 85.64%,
+    #fae157 93.5%,
+    #f9df56 100%
+  );
+  height: 600px;
+  img {
+    width: 60%;
+  }
+  width: 100%;
+
+  .text-sale {
+    width: 80%;
+  }
+
+  .sale {
+    h2 {
+      width: 80%;
+      color: #231300;
+      font-size: 36.04px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 30.316px; /* 145.161% */
+      letter-spacing: -0.721px;
+    }
+    span {
+      font-family: "Poppins", sans-serif;
+      font-size: 98px;
+      font-weight: bolder;
+    }
+    font-family: Archivo Narrow;
+  }
+  #btn {
+    border-radius: 4.75px;
+    background: #000;
+    color: white;
+    padding: 15px;
+    font-weight: 300;
+    font-size: 20px;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

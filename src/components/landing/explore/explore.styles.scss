@@ -1,0 +1,57 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-container {
+  border-radius: 25px;
+  background: #f4f6f5;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px 90px;
+
+  .explore {
+    align-items: center;
+    flex: 1;
+    flex-shrink: 0;
+    color: #ed2939;
+    color: #000;
+    h1 {
+      width: 50%;
+      font-family: Poppins;
+      font-size: 65.6px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 57px; /* 125% */
+    }
+    h2 {
+      font-weight: 100;
+      color: #555252;
+      padding-bottom: 70px;
+    }
+    #btn {
+      border-radius: 4.75px;
+      background: #000;
+      color: white;
+      padding: 15px;
+      font-weight: 300;
+      font-size: 20px;
+    }
+    .land-items {
+      margin-bottom: 10%;
+    }
+  }
+
+  .land-image {
+    max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+    max-height: 100%;
+    img {
+      width: 600px;
+    }
+  }
+}

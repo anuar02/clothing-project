@@ -1,0 +1,25 @@
+.contain-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Display 4 items per row */
+  gap: 60px; /* Adjust the gap as needed */
+  max-width: 1200px; /* Add a max-width to control the container's width */
+  margin: 0 auto; /* Center the container */
+  justify-content: space-between;
+  padding-bottom: 50px; /* Center items horizontally */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .category-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Display 2 items per row for smaller screens */
+  }
+}

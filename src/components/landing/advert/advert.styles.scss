@@ -1,0 +1,27 @@
+.advert {
+  width: 100%;
+  background-color: #ebd96b;
+  z-index: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 10px;
+
+  .logos {
+    vertical-align: middle;
+    display: table-cell;
+    animation: slideToLeft 50s infinite linear;
+    .img {
+      margin: 5px 50px;
+      height: 120px;
+      width: 120px;
+    }
+  }
+  @keyframes slideToLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
