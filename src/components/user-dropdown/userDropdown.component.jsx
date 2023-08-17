@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./user-dropdown.styles.scss";
-import { UserContext } from "../../context/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const UserDropdown = () => {

@@ -1,11 +1,8 @@
 import React from "react";
 import "./sign-in-form.styles.scss";
-import { useState, useContext } from "react";
-import { getAuth, signOut } from "firebase/auth";
-import {
-  SignInWithGooglePopup,
-  createUserDocFromAuth,
-} from "../../utils/firebase/firebase.utils";
+import { useState } from "react";
+
+import { SignInWithGooglePopup } from "../../utils/firebase/firebase.utils";
 import InputForm from "../input-form/InputForm.component";
 import Button from "../button/button.component";
 import { signInUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";

@@ -1,7 +1,6 @@
-import React, { Fragment, useContext } from "react";
+import React from "react";
 
 import "./shop.styles.scss";
-import { CategoriesContext } from "../../context/categoriesMap.context";
 import CategoriesPreview from "../categories-preview/categoriesPreview.component";
 import { Route, Routes } from "react-router-dom";
 import Category from "../category/category.component";
