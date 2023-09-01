@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
-import { CartContext } from "../../context/cart.context";
 import Button from "../button/button.component";
 import CartItem from "../cart-item/cartItem.component";
 import "./cart-dropdown.styles.scss";
-import React, { useContext } from "react";
+import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { selectCartItems } from "../../store/cart/cart.selector";
 
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const cartItems = useSelector(selectCartItems);
+  console.log(cartItems, " drop");
   const totalSum = cartItems.reduce(
     (accum, current) => accum + current.price * current.quantity,
     0
   );
+
   return (
     <div className="cart-dropdown-container">
       <header>

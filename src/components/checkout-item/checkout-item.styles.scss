@@ -6,6 +6,7 @@
   padding: 15px 20px;
   font-size: 20px;
   align-items: center;
+  justify-content: space-around;
 
   .image-container {
     width: 23%;
@@ -19,7 +20,7 @@
   .name,
   .quantity,
   .price {
-    width: 23%;
+    user-select: none;
   }
 
   .quantity {

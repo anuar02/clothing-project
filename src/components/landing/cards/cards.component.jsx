@@ -1,10 +1,12 @@
-import React, { useContext, Fragment } from "react";
+import React, { Fragment } from "react";
 import "./cards.styles.scss";
 import ProductCard from "../../product-card/ProductCard.component";
-import { CategoriesContext } from "../../../context/categoriesMap.context";
+import { useSelector } from "react-redux";
+import { selectCategoriesMap } from "../../../store/categories/categories.selector";
 
 const Cards = () => {
-  const { categoriesMap } = useContext(CategoriesContext);
+  const categoriesMap = useSelector(selectCategoriesMap);
+
   return (
     <div className="card-main">
       <span className="arrivals">New Arrivals</span>

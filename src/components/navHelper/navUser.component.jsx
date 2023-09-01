@@ -1,14 +1,20 @@
-import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../context/user.context";
 import UserDropdown from "../user-dropdown/userDropdown.component";
-
+import { useDispatch, useSelector } from "react-redux";
+import { setUserCartOpen } from "../../store/user/user.reducer";
+import {
+  selectUserCartOpen,
+  selectCurrentUser,
+} from "../../store/user/user.selector";
 const NavUser = () => {
-  const { currentUser, userCartOpen, setUserCartOpen } =
-    useContext(UserContext);
+  const dispatch = useDispatch();
+  const userCartOpen = useSelector(selectUserCartOpen);
+  const currentUser = useSelector(selectCurrentUser);
+
   const toogleUserCart = () => {
-    setUserCartOpen(!userCartOpen);
+    dispatch(setUserCartOpen(!userCartOpen));
   };
+
   return (
     <>
       {currentUser && userCartOpen ? <UserDropdown /> : null}

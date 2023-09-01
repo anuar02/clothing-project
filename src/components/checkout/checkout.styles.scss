@@ -7,18 +7,33 @@
   border-radius: 8px;
   padding: 0 50px 50px 50px;
   border-right: 15px;
+  @media (max-width: 740px) {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
 }
-
+.check-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 2%;
+  @media (max-width: 740px) {
+    flex-direction: column;
+  }
+}
 .checkout-container {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  width: 55%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto 0;
   border-radius: 15px;
   background-color: #ffffff;
+  @media (max-width: 740px) {
+    width: 100%;
+  }
 
   .total {
     width: 100%;
@@ -31,16 +46,11 @@
     width: 100%;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
     border-bottom: 1px solid darkgrey;
+    justify-content: space-around;
 
     .header-block {
       text-transform: capitalize;
-      width: 23%;
-
-      &:last-child {
-        width: 8%;
-      }
     }
   }
 }

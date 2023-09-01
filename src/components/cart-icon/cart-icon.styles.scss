@@ -13,6 +13,7 @@
   }
 
   .item-count {
+    user-select: none;
     position: absolute;
     font-size: 12px;
     font-weight: bold;
