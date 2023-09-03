@@ -1,17 +1,42 @@
 import { Outlet, Link } from "react-router-dom";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import "./navigation.styles.scss";
 import CartIcon from "../../components/cart-icon/cartIcon.component";
 import CartDropdown from "../../components/cart-dropdown/cartDropdown.component";
 import NavUser from "../../components/navHelper/navUser.component";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectIsCartOpen } from "../../store/cart/cart.selector";
+import { setCategories } from "../../store/categories/categories.reducer";
 import {
-  selectCartItems,
-  selectIsCartOpen,
-} from "../../store/cart/cart.selector";
+  createUserDocFromAuth,
+  getCategoriesAndDocuments,
+  onAuthStateChangedListener,
+} from "../../utils/firebase/firebase.utils";
+import { Dropdown, Navbar } from "flowbite-react";
+import { setCurrentUser } from "../../store/user/user.reducer";
 
 const Navigation = () => {
   const isCartOpen = useSelector(selectIsCartOpen);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChangedListener((user) => {
+      if (user) {
+        createUserDocFromAuth(user);
+      }
+      dispatch(setCurrentUser(user));
+    });
+
+    return unsubscribe;
+  });
+
+  useEffect(() => {
+    const getCategoriesMap = async () => {
+      const categoriesArray = await getCategoriesAndDocuments();
+      dispatch(setCategories(categoriesArray));
+    };
+    getCategoriesMap();
+  });
 
   return (
     <Fragment>

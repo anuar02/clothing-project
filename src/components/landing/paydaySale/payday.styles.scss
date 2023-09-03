@@ -47,6 +47,8 @@
       font-size: 98px;
       font-weight: bolder;
     }
+    height: inherit;
+
     font-family: Archivo Narrow;
   }
   #btn {
@@ -56,9 +58,17 @@
     padding: 15px;
     font-weight: 300;
     font-size: 20px;
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
   }
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1200px) {
+    height: 100%;
+    flex-direction: column;
+    padding: 10px;
+  }
 }

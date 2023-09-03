@@ -7,8 +7,9 @@ import { selectCategoriesMap } from "../../store/categories/categories.selector"
 
 const CategoriesPreview = () => {
   const categoriesMap = useSelector(selectCategoriesMap);
+
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <LinkButton />
       <CategoryPreview products={categoriesMap} />
     </div>

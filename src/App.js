@@ -10,31 +10,25 @@ import {
   onAuthStateChangedListener,
 } from "./utils/firebase/firebase.utils";
 import { setCurrentUser } from "./store/user/user.reducer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { MetaTags } from "react-meta-tags";
+import { selectCategoriesMap } from "./store/categories/categories.selector";
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user) => {
-      if (user) {
-        createUserDocFromAuth(user);
-      }
-      dispatch(setCurrentUser(user));
-    });
-
-    return unsubscribe;
-  });
-
   return (
-    <Routes>
-      <Route path="/" element={<Navigation />}>
-        <Route index element={<Landing />} />
-        <Route path="shop/*" element={<Shop />} />
-        <Route path="auth" element={<Authentication />} />
-        <Route path="checkout" element={<Checkout />} />
-      </Route>
-    </Routes>
+    <>
+      <MetaTags>
+        <title>Panache</title>
+      </MetaTags>
+      <Routes>
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<Landing />} />
+          <Route path="shop/*" element={<Shop />} />
+          <Route path="auth" element={<Authentication />} />
+          <Route path="checkout" element={<Checkout />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

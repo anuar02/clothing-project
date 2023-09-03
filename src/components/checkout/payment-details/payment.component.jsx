@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-import "./xam.style.css";
 import Card from "react-credit-cards";
 import { FaUserAlt, FaRegCreditCard } from "react-icons/fa";
-import {
-  formatCreditCardNumber,
-  formatCVC,
-  formatExpirationDate,
-  formatFormData,
-} from "./utils";
+import { formatCreditCardNumber, formatCVC, formatFormData } from "./utils";
 
 import "./payment.styles.scss";
 
@@ -89,7 +83,7 @@ const PaymentDetails = () => {
 
   return (
     <div key="Payment">
-      <div className="App-payment">
+      <div className="App-payment" style={{ width: "100%" }}>
         <Card
           number={number}
           name={name}
@@ -106,6 +100,7 @@ const PaymentDetails = () => {
             <input
               type="number"
               name="number"
+              inputmode="numeric"
               className="form-control"
               id="username"
               placeholder="Card Number"
@@ -161,7 +156,7 @@ const PaymentDetails = () => {
           </div>
           <input type="hidden" name="issuer" value={issuer} />
           <div className="form-actions">
-            <Button id='btn'>Pay</Button>
+            <Button id="btn">Pay</Button>
           </div>
         </div>
         {formData && (

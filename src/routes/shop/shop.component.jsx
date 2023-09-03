@@ -12,15 +12,6 @@ import { setCategories } from "../../store/categories/categories.reducer";
 const Shop = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const getCategoriesMap = async () => {
-      const categoriesArray = await getCategoriesAndDocuments();
-
-      dispatch(setCategories(categoriesArray));
-    };
-    getCategoriesMap();
-  });
-
   return (
     <Routes>
       <Route index element={<CategoriesPreview />} />

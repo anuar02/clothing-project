@@ -16,11 +16,7 @@ const Payday = () => {
         <h2>
           Spend minimal $100 get 30% off voucher code for your next purchase
         </h2>
-        <div>
-          <h2>1 June - 10 June 2021</h2>
-          <h2>*Terms & Conditions apply</h2>
-        </div>
-        <Link to="/shop">
+        <Link to="/shop" id="btn">
           <span id="btn">SHOP NOW</span>
         </Link>
       </div>
