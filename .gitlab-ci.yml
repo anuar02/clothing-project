@@ -1,0 +1,46 @@
+# This specifies the CI/CD pipeline stages
+stages:
+  - test
+  - compile
+  - build
+  - deploy
+
+test-job:
+  stage: test
+  script:
+    - echo "Test success"
+  tags:
+    - docker-vm
+    - shell
+    - azure
+
+compile-job:
+  image: node:14
+  stage: compile
+  script:
+    - echo "Compile success"
+  tags:
+    - docker-vm
+    - docker
+    - azure
+
+# Build stage: Builds the React application
+build-job:
+  stage: build
+  image: node:14  # Use Node.js image
+  before_script:
+    - npm install --quiet
+  script:
+    - npm run build
+
+# You can add more stages and jobs as needed
+
+deploy-job:
+  stage: deploy
+  image: alpine  # Use a lightweight Alpine Linux image
+  before_script:
+    - apk add --no-cache openssh-client  # Install SSH client
+  script:
+    - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd /path/to/deployment && git pull origin master && npm install && npm run build"
+  only:
+    - main
