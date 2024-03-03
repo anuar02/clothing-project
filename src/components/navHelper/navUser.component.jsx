@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import UserDropdown from "../user-dropdown/userDropdown.component";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserCartOpen } from "../../store/user/user.reducer";
@@ -6,6 +5,7 @@ import {
   selectUserCartOpen,
   selectCurrentUser,
 } from "../../store/user/user.selector";
+import {Link} from "react-router-dom";
 const NavUser = () => {
   const dispatch = useDispatch();
   const userCartOpen = useSelector(selectUserCartOpen);
